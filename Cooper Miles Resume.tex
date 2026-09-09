@@ -1,101 +1,339 @@
-\documentclass[10pt]{article}
-\usepackage[T1]{fontenc}
-\usepackage[left=1in, right=1in, top=1.5in, bottom=1in]{geometry}
+\documentclass[10pt, letterpaper]{article}
 
-\pagenumbering{gobble}
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=1.2 cm, % seperation between body and page edge from the top
+    bottom=1.2 cm, % seperation between body and page edge from the bottom
+    left=1.2 cm, % seperation between body and page edge from the left
+    right=1.2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Cooper Miles Resume},
+    pdfauthor={Cooper Miles},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    % \usepackage[T1]{fontenc} % this breaks sb2nov
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+
+\makeatother
+
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.2 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\circ$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 5.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
 \begin{document}
-\linespread{1.2}
-\setlength{\parskip}{1pt}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
 
-\begin{center}
-	\vspace*{-3cm}
-	{\LARGE Cooper Miles\par}
-	{\large (669) 251-4483 | cooper@psychofx.com | \underline{github.com/Titanium-Lung}\par
-        		%\vspace{1\baselineskip}
-		%\par
-	}
-\end{center}
+    \begin{header}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont Cooper Miles}
 
-\subsection*{Objective}
+        \vspace{0.2 cm}
 
-\setlength{\leftskip}{1cm}
+        \normalsize
+        %\mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Rochester, NY}%
+        %\kern 0.25 cm%
+        %\AND%
+        %\kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{mailto:cooper@psychofx.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}cooper@psychofx.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tel:+1-669-251-4483}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}(669)-251-4483}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/cooper-miles-9b1253376/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}cooper-miles-9b1253376}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/Titanium-Lung}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}Titanium-Lung}}%
+    \end{header}
 
-Seeking an undergraduate research opportunity \\
-Available August - December 2026. 
+    \vspace{0.2 cm - 0.2 cm}
 
-\setlength{\leftskip}{0cm}
 
-\subsection*{Education}
-\setlength{\leftskip}{1cm}
+    \section{Objective}
 
-Rochester Institute of Technology: Rochester, New York \\
-Accelerated Bachelor of Science/Master of Science, Computer Science. Expected May 2030 \\
-GPA: 3.800 \\
-Relevant Courses: Computer Science for AP (Java/Python), Introduction to Software Engineering (Java and Typescript), Principles of Data Management (SQL), Mechanics of Programming (C)
-Achievements: Fall 2024, Spring 2025, Fall 2025, and Spring 2026 Dean's List
+        \begin{onecolentry}
+            Seeking co-op as a Software Developer. Available: January - December 2027
+        \end{onecolentry}
 
-\setlength{\leftskip}{0cm}
-\subsection*{Skills}
-\setlength{\leftskip}{1cm}
+    \section{Education}
 
-Programming languages: Java, Python, JavaScript, Typescript, HTML, GDScript C, C\# \\
-Software: Visual Studio Code, Git, PyCharm, IntelliJ, Fusion360, Blender 
+        \begin{twocolentry}{
 
-\setlength{\leftskip}{0cm}
+        
+        \textit{Expected Graduation May 2029}}
+            \textbf{\hrefWithoutArrow{https://www.rit.edu/}{\color{black}Rochester Institute of Technology: Rochester, New York}}
 
-\subsection*{Projects}
+            \textit{Bachelor of Science in Computer Science}
+        \end{twocolentry}
 
-\setlength{\leftskip}{1cm}
+        \vspace{0.10 cm}
+        
+        \begin{onecolentry}
+            \begin{highlights}
+                \item GPA: 3.800, Dean's List (Fall 2024, Spring 2025, Fall 2025, Spring 2026)
+            \end{highlights}
+        \end{onecolentry}
 
-Archipelago Hosting Service | Personal (current) | \underline{https://github.com/Titanium-Lung/archipelago-csh}
-\begin{itemize}
-\setlength{\itemindent}{1cm}
-\item Programmed a website with a Python backend using Flask which connects to a JavaScript frontend using http requests
-\item Fetch data from backend by efficiently reading stored files in the form of Python dictionaries
-\item Efficiently mass add data to a PostgreSQL database, for reading and analysis by users
-\end{itemize} 
-Mock Ufund Website | Class (2025) 
-\begin{itemize}
-\setlength{\itemindent}{1cm}
-\item Programmed a Java backend using REST API which connects to a Typescript frontend with a team of 4 people
-\item Utilised Java classes and interfaces to write readable and easy-to-expand code 
-\item Stored class data in ArrayLists and HashMaps for easy access by other classes 
-\end{itemize} 
-Basketpong | Personal (2025) | \underline{github.com/Titanium-Lung/basketpong}
-\begin{itemize}
-\setlength{\itemindent}{1cm}
-\item Utilized Godot to create a 2D game that is a mash up between Pong and Basketball
-\item Coded functionality for collisions and ball physics
-\item Designed a UI that the player uses to navigate through the game's multiple pages 
-\end{itemize}
 
-\setlength{\leftskip}{0cm}
+    \section{Skills}
+    
+        \begin{onecolentry}
+            \textbf{Programming Languages:} Java, Python, Javascript, Typescript, HTML, GDScript, C, C\#
+        
+        \end{onecolentry}
 
-\subsection*{Clubs and Organizations}
+        \vspace{0.1 cm}
 
-\setlength{\leftskip}{1cm}
+        \begin{onecolentry}
+            \textbf{Tools:} Git, Visual Studio Code, IntelliJ, Fusion360, Blender
+        
+        \end{onecolentry}
 
-Computer Science House
-\begin{itemize}
-\setlength{\itemindent}{1cm}
-\item Voted History Director of Computer Science House
-\item Appointed as Editor for the weekly newsletter 
-\item Contributing to House services
-\begin{itemize}
-\setlength{\itemindent}{1.2cm}
-\item Building Archipelago Hosting Service for use by members
-\item Devcade, including exhibiting the project during ImagineRIT
-\end{itemize}
-\end{itemize}
+        \vspace{0.1 cm}
 
-\setlength{\leftskip}{0cm}
+        
+        \begin{onecolentry}
+            \textbf{Fundamentals:} Leadership, Teamwork, Communication, Public Speaking, Professional Emailing
+        \end{onecolentry}
+
+
+    \section{Projects}        
+        \begin{onecolentry}
+            \textbf{Archipelago Hosting Service $|$ Personal (current) $|$ \underline{github.com/Titanium-Lung/archipelago-csh}
+}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        
+        \begin{onecolentry}
+            \textit{Programmed a website with a Python backend using Flask which connects to a React frontend using http requests.}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Fetch data from backend by efficiently reading stored files in the form of Python dictionaries
+                \item Efficiently mass add data to a PostgreSQL database, for later analysis using SQL queries
+                \item Workers interact with subprocesses using TCP
+                \item \textbf{Tools Used}: Python, Flask, Javascript, React, Git, PostgresSQL, Docker, Gunicorn
+            \end{highlights}
+        \end{onecolentry}
+
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Mock Ufund Website $|$ Class (2025)}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        
+        \begin{onecolentry}
+            \textit{Programmed a Java backend using REST API which connects to an Angular frontend with a team of 4 people}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Utilised Java classes and interfaces to write readable and easy-to-expand code 
+                \item Stored class data in ArrayLists and HashMaps for easy access by other classes
+                \item \textbf{Tools Used}: Java, REST API, Git, Angular
+            \end{highlights}
+        \end{onecolentry}
+        
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Basketpong $|$ Personal (2025) $|$ \underline{github.com/Titanium-Lung/basketpong}}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        
+        \begin{onecolentry}
+            \textit{Utilized Godot to create a 2D game that is a mash up between Pong and Basketball.}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Coded functionality for collisions and ball physics
+                \item Designed a UI that the player uses to navigate through the game's multiple pages
+                \item \textbf{Tools Used}: Godot, Git
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Work Experience}
+        \begin{twocolentry}{
+        \textit{Rochester, NY}  
+        
+        \textit{Aug 2026 – Present}}
+        
+            \textbf{Undergraduate Research Assistant}
+            
+            \textit{Rochester Institute of Technology}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Researched papers related to using LLMs to improve security of protected healthcare information
+                \item Completed training regarding dealing with data collected from human subjects
+                \item \textbf{Skills Used}: Teamwork, Research
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Activities}
+
+    \begin{twocolentry}{
+    \textit{Rochester, NY}
+    
+    \textit{Aug 2024 - Present}
+    }    
+        
+        \textbf{\hrefWithoutArrow{https://www.csh.rit.edu/}{\color{black}Computer Science House}}
+        
+        \textit{Learning community supporting member growth in various computing disciplines}
+        
+    \end{twocolentry}
+
+    \vspace{0.10 cm}
+        
+    \begin{twocolentry}{
+    \textit{Jun 2026 – Present}}
+    
+        {House History Director}
+        
+    \end{twocolentry}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Supervising over House History operations
+            \item Maintaining, upholding, and promoting house traditions
+            \item Contacting companies in order to find a venue for house's annual formal dinner
+            \item Discussing and voting on issues presented to E-Board
+            \item \textbf{Skills Used}: Communication, professional email
+        \end{highlights}
+    \end{onecolentry}
+
+    \vspace{0.20 cm}
 
 \end{document}
-
-
-
-
-
-
-
-
