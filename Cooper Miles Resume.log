@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.27)  9 SEP 2026 01:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.27)  16 SEP 2026 15:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -542,51 +542,45 @@ nput line 153.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd
 )
-LaTeX Font Info:    Trying to load font information for U+fontawesomefree2 on i
-nput line 157.
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/ufontawesomefree2.fd
-)
 LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
- input line 161.
+ input line 157.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands0.
 fd)
 LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <8> not a
 vailable
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
-n input line 161.
+n input line 157.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-92.
+88.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-192.
+188.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-192.
+188.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 192.
+(Font)              <10> on input line 188.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 192.
+(Font)              <7> on input line 188.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 192.
+(Font)              <5> on input line 188.
  [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/202
 4/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/usr/local/texlive/2024
-/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc}{/usr/local/texlive/2024/
-texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}{/usr/local/texlive/2024
-/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}{/usr/local/texlive/202
+4/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./Cooper Miles Resume.aux)
@@ -596,26 +590,24 @@ L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15131 strings out of 474116
- 258488 string characters out of 5743682
+ 15112 strings out of 474116
+ 257938 string characters out of 5743682
  1956187 words of memory out of 5000000
- 37291 multiletter control sequences out of 15000+600000
- 585986 words of font info for 54 fonts, out of 8000000 for 9000
+ 37277 multiletter control sequences out of 15000+600000
+ 585675 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,5n,79p,324b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/fontawesome5/FontAweso
 me5Brands-Regular.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/fo
 ntawesome5/FontAwesome5Free-Regular.pfb></usr/local/texlive/2024/texmf-dist/fon
-ts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></usr/local/texlive/202
-4/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-di
-st/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
-ype1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public
-/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10
-.pfb>
-Output written on "Cooper Miles Resume.pdf" (1 page, 150128 bytes).
+ts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/p
+ublic/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/l
+mr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on "Cooper Miles Resume.pdf" (1 page, 142268 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 84 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  8 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
