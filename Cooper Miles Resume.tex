@@ -34,6 +34,7 @@
 \usepackage{ifthen} % for conditional statements
 \usepackage{needspace} % for avoiding page brake right after the section title
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+%\usepackage{newtxtext,newtxmath} % Consider changing font 
 
 % Ensure that generate pdf is machine readable/ATS parsable:
 \ifPDFTeX
@@ -150,7 +151,7 @@
         %\kern 0.25 cm%
         %\AND%
         %\kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{mailto:cooper@psychofx.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}cooper@psychofx.com}}%
+        \mbox{\hrefWithoutArrow{mailto:cm9690@rit.edu}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}cm9690@rit.edu}}%
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
@@ -167,33 +168,13 @@
     \section{Objective}
 
         \begin{onecolentry}
-            Seeking co-op as a Software Developer. Available: January - December 2027
+            Seeking co-op/internship as a Software Developer. Available: Jan - Dec 2027
         \end{onecolentry}
-
-    \section{Education}
-
-        \begin{twocolentry}{
-
-        
-        \textit{Expected Graduation May 2029}}
-            \textbf{\hrefWithoutArrow{https://www.rit.edu/}{\color{black}Rochester Institute of Technology: Rochester, New York}}
-
-            \textit{Bachelor of Science in Computer Science}
-        \end{twocolentry}
-
-        \vspace{0.10 cm}
-        
-        \begin{onecolentry}
-            \begin{highlights}
-                \item GPA: 3.800, Dean's List (Fall 2024, Spring 2025, Fall 2025, Spring 2026)
-            \end{highlights}
-        \end{onecolentry}
-
 
     \section{Skills}
     
         \begin{onecolentry}
-            \textbf{Programming Languages:} Java, Python, Javascript, Typescript, HTML, GDScript, C, C\#
+            \textbf{Languages:} Python, Java, Javascript, Typescript, HTML/CSS, SQL, Golang, C\#, C, GDScript % write any program in C++
         
         \end{onecolentry}
 
@@ -207,29 +188,52 @@
         \vspace{0.1 cm}
 
         \begin{onecolentry}
-            \textbf{Tools:} Git, Openshift, Fusion360, Blender
+            \textbf{Tools:} Git, Openshift, Claude, ChatGPT, Fusion360, Blender 
         
         \end{onecolentry}
 
         \vspace{0.1 cm}
+    
+    \section{Work Experience}
+        \begin{twocolentry}{
+        \textit{Rochester, NY}  
+        
+        \textit{Aug 2026 – Present}}
+        
+            \textbf{Research Co-op/Intern}
+            
+            \textit{Rochester Institute of Technology}
+        \end{twocolentry}
 
-    \section{Projects}        
+        \vspace{0.10 cm}
         \begin{onecolentry}
-            \textbf{Archipelago Hosting Service $|$ Personal (current) $|$ \hrefWithoutArrow{https://github.com/Titanium-Lung/archipelago-csh}{\color{black}\underline{github.com/Titanium-Lung/archipelago-csh}}}
+            \begin{highlights}
+                \item Researched papers on using LLMs for computer forensics for security and privacy of protected healthcare information 
+                \item Completed CITI Program training for protecting the security and privacy of human subjects' data
+                \item Investigated areas where LLMs can be used to strengthen HIPAA compliance 
+                \item Required project deliverables include a research paper submitted to an international conference in 2027 % ICHI conference
+                %\item \textbf{Tools used:} Llama % learn about it lol
+            \end{highlights}
+        \end{onecolentry}
+
+
+    \section{Personal Computing Projects -- Lead, Developer and Architect} 
+        \begin{onecolentry}
+            \textbf{Archipelago Hosting Service $|$ May 2026 - Present $|$ \hrefWithoutArrow{https://github.com/Titanium-Lung/archipelago-csh}{\color{black}\underline{github.com/Titanium-Lung/archipelago-csh}}}
         \end{onecolentry}
 
         \vspace{0.10 cm}
         
         \begin{onecolentry}
-            \textit{Developed a full-stack web application using React and Flask to create and manage multiplayer Archipelago game servers.}
+            \textit{Developed a full-stack web application using React and Flask to create and manage multiplayer Archipelago game servers}
         \end{onecolentry}
 
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Deployed and configured the application on OpenShift, creating application deployments and routes, and connecting the application to a PostgreSQL database. 
-                \item Designed a PostgreSQL-backed persistence layer for storing active game data and restoring hosted rooms after application restarts, allowing rooms to shut down after inactivity and be restored as needed.
-                \item Designed a process-management architecture to coordinate Archipelago server subprocesses across multiple Gunicorn workers, using TCP and JSON messages to communicate with a centralized process manager.
+                \item Deployed and configured the application on OpenShift, creating application deployments and routes, and connecting the application to a PostgreSQL database
+                \item Designed a PostgreSQL-backed persistence layer for storing active game data and restoring hosted rooms after application restarts, allowing rooms to shut down after inactivity and be restored as needed
+                \item Designed a process-management architecture to coordinate Archipelago server subprocesses across multiple Gunicorn workers, using TCP and JSON messages to communicate with a centralized process manager
             \end{highlights}
         \end{onecolentry}
 
@@ -237,7 +241,26 @@
         \vspace{0.2 cm}
 
         \begin{onecolentry}
-            \textbf{Mock Ufund Website $|$ Class (2025)}
+            \textbf{Basketpong $|$ Jan 2025 - Mar 2025 $|$ \hrefWithoutArrow{https://github.com/Titanium-Lung/basketpong}{\color{black}\underline{github.com/Titanium-Lung/basketpong}}}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        
+        \begin{onecolentry}
+            \textit{Developed a 2D multiplayer game in Godot/GDScript, combining basketball-style gameplay with Pong mechanics}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Implemented collision detection, ball physics, player movement, and scoring mechanics to create responsive gameplay
+                \item Designed and implemented a multi-page user interface for navigating menus % and something?
+            \end{highlights}
+        \end{onecolentry}
+    
+    \section{Class Projects}
+     \begin{onecolentry}
+            \textbf{Mock Ufund Website $|$ Class: Intro to Software Engineering $|$ Fall 2025} 
         \end{onecolentry}
 
         \vspace{0.10 cm}
@@ -249,49 +272,30 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Implemented a pet adoption workflow across the Angular frontend and Java REST API, allowing users to submit applications with questionnaire responses and administrators to approve or deny applications.
-                \item Collaborated through Git to integrate backend and frontend components and coordinate development across the team.
+                \item Implemented a pet adoption system, for users application submission and administrator approval/denial % maybe add something back
+                \item Collaborated through Git to integrate backend and frontend components and coordinate development across the team
             \end{highlights}
         \end{onecolentry}
         
 
-        \vspace{0.2 cm}
+        \vspace{0.2 cm}        
+    
+    \section{Education}
 
-        \begin{onecolentry}
-            \textbf{Basketpong $|$ Personal (2025) $|$ \hrefWithoutArrow{https://github.com/Titanium-Lung/basketpong}{\color{black}\underline{github.com/Titanium-Lung/basketpong}}}
-        \end{onecolentry}
-
-        \vspace{0.10 cm}
-        
-        \begin{onecolentry}
-            \textit{Developed a 2D multiplayer game in Godot/GDScript, combining basketball-style gameplay with Pong mechanics.}
-        \end{onecolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Implemented collision detection, ball physics, player movement, and scoring mechanics to create responsive gameplay.
-                \item Designed and implemented a multi-page user interface for navigating menus and gameplay.
-            \end{highlights}
-        \end{onecolentry}
-
-    \section{Work Experience}
         \begin{twocolentry}{
-        \textit{Rochester, NY}  
+
         
-        \textit{Aug 2026 – Present}}
-        
-            \textbf{Undergraduate Research Assistant}
-            
-            \textit{Rochester Institute of Technology}
+        \textit{Expected Graduation May 2029}}
+            \textbf{\hrefWithoutArrow{https://www.rit.edu/}{\color{black}Rochester Institute of Technology, Rochester, New York}}
+
+            \textit{Bachelor of Science in Computer Science.} GPA: 3.80, Dean's List since Fall 2024
         \end{twocolentry}
 
         \vspace{0.10 cm}
+        
         \begin{onecolentry}
             \begin{highlights}
-                \item Researching papers related to using LLMs for computer forensics to improve security of protected healthcare information
-                \item Completed CITI data or specimens only research training regarding dealing with data collected from human subjects
-                \item \textbf{Skills Used}: Teamwork, Research
+                \item \textbf{Relevant courses:} Intro to AI, Mechanics of Programming, Analysis of Algorithms, Intro to Software Engineering 
             \end{highlights}
         \end{onecolentry}
 
@@ -314,16 +318,16 @@
     \begin{twocolentry}{
     \textit{Jun 2026 – Present}}
     
-        \textbf{House History Director}
+        \quad \textbf{House History Director and E-Board Member} % fix indentation
         
     \end{twocolentry}
     \begin{onecolentry}
-        \begin{highlights}
-            \item Supervising over House History operations
-            \item Maintaining, upholding, and promoting house traditions
-            \item Contacting companies in order to find a venue for house's annual formal dinner
-            \item Discussing and voting on issues presented to E-Board
-            \item \textbf{Skills Used}: Communication, professional email
+        \begin{highlights} 
+            \item Supervised house history operations, and maintained, upheld, and promoted house traditions
+            \item Interacted with companies to select a venue for house's annual formal dinner % peer-led
+            %\item Discussed and voted on issues presented to E-Board
+            \item Presented issues to E-Board for discussion and approval
+            %\item \textbf{Skills Used}: Communication, professional email % probably don't need this
         \end{highlights}
     \end{onecolentry}
 
